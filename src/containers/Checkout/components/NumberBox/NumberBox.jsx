@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import styled from 'styled-components';
 import ApplyButton from '../ApplyButton/ApplyButton';
+import axios from 'axios';
 import IsApplied from '../IsApplied/IsApplied';
 
 const NumberContainer = styled.div`
     margin-top: 10px;
 `;
-
-const API = 'http://localhost:3001/giftcards';
 
 
 export default class NumberBox extends Component {
@@ -16,27 +15,50 @@ export default class NumberBox extends Component {
         super(props);
         this.state = {
             giftcards: [],
-            cardnumbers: [],
-            controlnumber: [],
             cardValue: '',
             controlValue: ''
         };
+        this.onClickHandler = this.onClickHandler.bind(this);
+        this.onHandleChange = this.onHandleChange.bind(this);
     }
 
-    componentDidMount() {
-        fetch(API)
-        .then(res => res.json())
-        .then(response => this.setState({ 
-            giftcards: response,
-            cardnumbers: response.cardnumber,
-            controlnumber: response.control
-        }))
+    onHandleChange (value, value2) {
+        this.setState({
+            cardValue: value,
+            controlValue: value2  
+        });
+    }
+
+    async componentDidMount() {
+        const response = await axios.get('http://localhost:3001/giftcards')
+        const giftcards = response.data
+        this.setState({giftcards: giftcards})
+        }
+
+    onClickHandler() {
+        
+        if (this.state.cardValue === this.state.giftcards.cardnumber && 
+            this.state.controlValue === this.state.giftcards.control) {
+            return alert("correct")
+        } else if (this.state.cardValue.length === 0 &&
+             this.state.controlValue.length === 0) {
+            return alert("error")
+        } else {
+            return alert("enter correct number")
+        }
     }
     
     render() {
+        let resultsbox;
+
+        if(this.state.cardValue === this.state.giftcards.cardnumber && 
+            this.state.controlValue === this.state.giftcards.control) {
+                resultsbox = <IsApplied/>
+            } 
         
         return (
             <NumberContainer>
+              {resultsbox}  
                 <TextField
                 style={{ margin: 8, width: 430 }}
                 margin="normal"
@@ -44,7 +66,8 @@ export default class NumberBox extends Component {
                 type="search"
                 label="Gift Card Number"
                 name="cardNomber"
-                ref={(ref) => {this.cardValue =ref}}
+                onChange={e => this.onHandleChange(e.target.value)}
+                
                 />
                 <TextField
                 style={{ margin: 8, width: 200}}
@@ -53,10 +76,10 @@ export default class NumberBox extends Component {
                 type="search"
                 label="Control Code"
                 name="controlCoder"
-                ref={(ref) => {this.controlValue =ref}}
+                onChange={e => this.onHandleChange(e.target.value2)}
                 />
 
-                <ApplyButton/>
+                <ApplyButton handle={this.onClickHandler}/>
             </NumberContainer>
         )
     }
