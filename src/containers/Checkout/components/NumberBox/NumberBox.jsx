@@ -16,7 +16,8 @@ export default class NumberBox extends Component {
         this.state = {
             giftcards: [],
             cardValue: '',
-            controlValue: ''
+            controlValue: '',
+            isSeen: false
         };
         this.onClickHandler = this.onClickHandler.bind(this);
         this.onHandleChange = this.onHandleChange.bind(this);
@@ -39,7 +40,7 @@ export default class NumberBox extends Component {
         
         if (this.state.cardValue === this.state.giftcards.cardnumber && 
             this.state.controlValue === this.state.giftcards.control) {
-            return alert("correct")
+            return alert("correct") & this.setState({isSeen:true})
         } else if (this.state.cardValue.length === 0 &&
              this.state.controlValue.length === 0) {
             return alert("error")
@@ -49,12 +50,12 @@ export default class NumberBox extends Component {
     }
     
     render() {
-        let resultsbox;
-
-        if(this.state.cardValue === this.state.giftcards.cardnumber && 
-            this.state.controlValue === this.state.giftcards.control) {
-                resultsbox = <IsApplied/>
-            } 
+        let resultsbox;            
+        if (this.state.isSeen) {
+            resultsbox = <IsApplied cardno={this.state.cardValue}/>;
+        } else {
+            resultsbox = null;
+        }
         
         return (
             <NumberContainer>
