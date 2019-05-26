@@ -21,17 +21,17 @@ Then please run the JSON Server and Node Server.
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser,
-JSON server is on [http://localhost:3001](http://localhost:3001).
-
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser,<br>
+JSON server is on [http://localhost:3001](http://localhost:3001).<br>
+<br>
 ## Dependencies
 
- *Project created with `create-react-app`
- *`Styled Components` and `Scss` for styling and as library `Material UI` used. 
- *For server side rendering used `react-snap`
- *For deploying and demo purposes `AWS S3` service has been used.
- *`Axios` used for fetching data from JSON Server.
-
+ *Project created with `create-react-app`<br>
+ *`Styled Components` and `Scss` for styling and as library `Material UI` used. <br>
+ *For server side rendering used `react-snap`<br>
+ *For deploying and demo purposes `AWS S3` service has been used.<br>
+ *`Axios` used for fetching data from JSON Server.<br>
+<br>
 ## Demo JSON Data
 
 For demo purposes please enter one of the following cardnumber and control number to related fields in app. 
