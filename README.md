@@ -79,12 +79,12 @@ For demo purposes please enter one of the following cardnumber and control numbe
 `
 ## What I Practiced
 
-*Ofcourse the Styled Components and Material UI elements props.
-*I have completed the project very relaxed way in 2 Days, I have learned more calm down way of developing thanks to Bestseller. 
-
+*Ofcourse the Styled Components and Material UI elements props.<br>
+*I have completed the project very relaxed way in 2 Days, I have learned more calm down way of developing thanks to Bestseller.<br> 
+<br>
 ## What can I Do for Improving the App
 
-*Depending on the total project structure, i can practice to use Redux on that project.
-*I can create a Postgresql Database and use as Database for cardnumber.
-*I can try and practice to migrate the project to Next.JS
-*In a great environment and with the best people, I think i can't imagine the limits.
+*Depending on the total project structure, i can practice to use Redux on that project.<br>
+*I can create a Postgresql Database and use as Database for cardnumber.<br>
+*I can try and practice to migrate the project to Next.JS<br>
+*In a great environment and with the best people, I think i can't imagine the limits.<br>
