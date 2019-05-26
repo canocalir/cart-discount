@@ -1,68 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bestseller Frontend Test (GiftCard Checkout Module)
 
-## Available Scripts
+## Demo deployed to AWS S3 and JSON Server working on Heroku
+http://bestseller-frontend.s3-website.eu-central-1.amazonaws.com/
+<br>
 
-In the project directory, you can run:
+## How it works?
+
+After cloning the repo, first please run:
+
+### `npm install`
+
+Then please run the JSON Server and Node Server.
+
+## Json Server
+
+### `json-server --watch db.json --port 3001`
+
+## Node Server
 
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser,
+JSON server is on [http://localhost:3001](http://localhost:3001).
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Dependencies
 
-### `npm test`
+ *Project created with `create-react-app`
+ *`Styled Components` and `Scss` for styling and as library `Material UI` used. 
+ *For server side rendering used `react-snap`
+ *For deploying and demo purposes `AWS S3` service has been used.
+ *`Axios` used for fetching data from JSON Server.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo JSON Data
 
-### `npm run build`
+For demo purposes please enter one of the following cardnumber and control number to related fields in app. 
+<br>
+`
+"cardnumber": "5078282848878291861",
+`
+<br>
+<br>
+`
+"control": "175"
+`
+<br>
+<br>
+`
+"cardnumber": "6435047555924007105",
+`
+<br>
+<br>
+`
+"control": "201"
+`
+<br>
+<br>
+`
+"cardnumber": "6435047555924007905",
+`
+<br>
+<br>
+`
+"control": "285"
+`
+<br>
+<br>
+`
+"cardnumber": "6435047555924007505",
+`
+<br>
+<br>
+`
+"control": "296"
+`
+<br>
+<br>
+`
+## What I Practiced
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*Ofcourse the Styled Components and Material UI elements props.
+*I have completed the project very relaxed way in 2 Days, I have learned more calm down way of developing thanks to Bestseller. 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## What can I Do for Improving the App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+*Depending on the total project structure, i can practice to use Redux on that project.
+*I can create a Postgresql Database and use as Database for cardnumber.
+*I can try and practice to migrate the project to Next.JS
+*In a great environment and with the best people, I think i can't imagine the limits.
