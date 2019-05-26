@@ -87,7 +87,7 @@ export default class NumberBox extends Component {
     }
 
     async componentDidMount() {
-        const response = await axios.get('http://localhost:3001/giftcards')
+        const response = await axios.get('https://bestseller-server.herokuapp.com/giftcards')
         const giftcards = response.data
         this.setState({giftcards: giftcards})
     }
