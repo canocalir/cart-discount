@@ -8,6 +8,7 @@ const ButtonContainer = styled.div`
 const Button = styled.button`
     background-color: #000;
     width: 170px;
+    position: relative;
 `;
 
 const ButtonText = styled.h4`

@@ -6,16 +6,31 @@ import Description from './components/Description/Description';
 import NumberBox from './components/NumberBox/NumberBox';
 
 export default class Checkout extends Component {
+    constructor() {
+        super();
+        this.state = {
+            isVisible: false
+        }
+    }
+    onClick() {
+        this.setState(prevState => ({ isVisible: !prevState.isVisible }));
+      }
+
     render() {
+        
         return (
             <div className="gift-container">
                 <div>
                     <Heading/>
-                    <CheckInput/>
-                    <Description/>
-                    <NumberBox/>
-                </div>
+                    <CheckInput hide={() => this.onClick()}/>
+                    {
+                        this.state.isVisible
+                        
+                    ? <NumberBox/> : null
+                    }
+                    </div>
             </div>
+
         )
     }
 }

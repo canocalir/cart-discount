@@ -3,6 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Main from './containers/Main/Main';
 import * as serviceWorker from './serviceWorker';
+import { hydrate, render } from "react-dom";
+
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(<Main />, rootElement);
+} else {
+  render(<Main />, rootElement);
+}
 
 ReactDOM.render(<Main />, document.getElementById('root'));
 

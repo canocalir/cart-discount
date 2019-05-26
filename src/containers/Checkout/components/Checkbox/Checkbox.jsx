@@ -14,9 +14,9 @@ padding: 0em;
 
 `;
 
-export default function CheckInput() {
+export default function CheckInput(props) {
     const [state, setState] = React.useState({
-        checked: true,
+        checked: false,
       });
     
       const handleChange = name => event => {
@@ -28,6 +28,7 @@ export default function CheckInput() {
      <Checkbox
         checked={state.checked}
         onChange={handleChange('checked')}
+        onClick={props.hide}
         value="checked"
         style={{color:"green"}}
     />
