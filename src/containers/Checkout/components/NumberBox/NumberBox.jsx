@@ -151,11 +151,8 @@ export default class NumberBox extends Component {
                 <TextField
                 style={{ margin: 8, width: 430 }}
                 margin="normal"
-                required
                 variant="outlined"
                 type="search"
-                minlength="19"
-                maxlength="19"
                 label="Gift Card Number"
                 disabled={this.state.disuse}
                 value={this.state.first}
@@ -166,7 +163,6 @@ export default class NumberBox extends Component {
                 <TextField
                 style={{ margin: 8, width: 200}}
                 margin="normal"
-                required
                 variant="outlined"
                 type="search"
                 label="Control Code"
