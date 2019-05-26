@@ -29,6 +29,8 @@ const TextControl = styled.div`
     color: red;
     margin-left: 200px;
     padding: 5px;
+    align-items: flex-end;
+
 
 `;
 
@@ -46,6 +48,7 @@ export default class NumberBox extends Component {
             giftcards: [],
             first: '',
             second: '',
+            disuse: false,
             isSeen: false,
             validate: true,
             isEmpty: true,
@@ -98,11 +101,18 @@ export default class NumberBox extends Component {
         if (matchingGiftCards.length > 0){
             this.setState({isSeen:true})
         }
-        if (first.length && second.length === 0) {
-            this.setState({isEmpty:true})
+        if (!first.length && !second.length) {
+            this.setState({isEmpty:false})
+        }
+
+        if (matchingGiftCards.length === 0) {
+            this.setState({isEmpty:false})
         } else if (this.state.isSeen) {
             this.setState({isEmpty:false})
-        } 
+        }
+
+        if (matchingGiftCards.length > 0)
+            this.setState({disuse:true})
     }
     
     render() {
@@ -144,7 +154,10 @@ export default class NumberBox extends Component {
                 required
                 variant="outlined"
                 type="search"
+                minlength="19"
+                maxlength="19"
                 label="Gift Card Number"
+                disabled={this.state.disuse}
                 value={this.state.first}
                 name="cardNomber"
                 onChange={this.onHandleChange('first')}
@@ -157,6 +170,7 @@ export default class NumberBox extends Component {
                 variant="outlined"
                 type="search"
                 label="Control Code"
+                disabled={this.state.disuse}
                 value={this.state.second}
                 name="controlCoder"
                 onChange={this.onHandleChange('second')}
